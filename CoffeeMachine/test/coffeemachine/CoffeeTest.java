@@ -27,20 +27,20 @@ public class CoffeeTest {
     @Test
     public void paymentWithTheSameValue() {
         Payment pay = new Payment();
-        assertEquals(0.35, pay.coffePayment(pay, 0.35));
+        assertEquals(0.35, pay.coffeePayment(pay, 0.35));
     }
 
     @Test
     public void paymentWithMoreValue() {
         Payment pay = new Payment();
-        assertEquals(1.00, pay.coffePayment(pay, 1.00));
+        assertEquals(1.00, pay.coffeePayment(pay, 1.00));
 
     }
 
     @Test
     public void insuficientMoney() {
         Payment pay = new Payment();
-        assertEquals(0, pay.coffePayment(pay, 0));
+        assertEquals(0, pay.coffeePayment(pay, 0));
     }
 
 }

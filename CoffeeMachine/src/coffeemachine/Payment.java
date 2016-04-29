@@ -12,7 +12,7 @@ public class Payment {
         this.money = money;
     }
 
-    public Payment coffePayment(Payment pay, double money) {
+    public Payment coffeePayment(Payment pay, double money) {
         if (money >= 0.35) {
             pay.setMoney(money - 0.35);
         } else {
