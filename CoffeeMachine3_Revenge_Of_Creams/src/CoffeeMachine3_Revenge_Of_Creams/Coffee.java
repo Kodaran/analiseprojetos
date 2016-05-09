@@ -1,23 +1,25 @@
-package CoffeeMachine3_Revenge_Of_Creams;
+package coffemachine.machine;
 
-import java.util.ArrayList;
+public class Coffee {
+	private String type;
+	private double price;
 
-public class Coffee extends Beverage{
-
-	
-	public ArrayList<String> recipe() {
-		ArrayList<String> s = new ArrayList<String>();
-		s.add("cup");
-		s.add("coffee");
-		s.add("sugar");
-		s.add("water");
-		return s;
+	public String getType() {
+		return type;
 	}
 
-	
-	public float price() {
-		return (float) 0.35;
+	public void setType(String type) {
+		this.type = type;
 	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
 	
 
 }
