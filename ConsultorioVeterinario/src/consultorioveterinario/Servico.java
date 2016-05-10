@@ -1,8 +1,14 @@
 package consultorioveterinario;
 
 public class Servico {
+
     private String nomeServico;
     private double valor;
+
+    public Servico(String nomeServico, double valor) {
+        this.nomeServico = nomeServico;
+        this.valor = valor;
+    }
 
     public String getNomeServico() {
         return nomeServico;
@@ -19,10 +25,4 @@ public class Servico {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    public void tipoServico(){
-        Servico servico = new Servico();
-        servico.setNomeServico(nomeServico);
-        servico.setValor(valor);
-    }
-    
 }

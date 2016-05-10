@@ -1,9 +1,16 @@
 package consultorioveterinario;
 
 public class Animal {
+
     private String nomeAnimal;
     private String raca;
     Cliente cliente;
+
+    public Animal(String nomeAnimal, String raca, Cliente cliente) {
+        this.nomeAnimal = nomeAnimal;
+        this.raca = raca;
+        this.cliente = cliente;
+    }
 
     public String getNomeAnimal() {
         return nomeAnimal;
@@ -28,6 +35,5 @@ public class Animal {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    
-    
+
 }

@@ -1,18 +1,26 @@
 package consultorioveterinario;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class OrdemServico {
 
-    private ArrayList<Item> itens;
+    private List<Item> itens;
     private double valorTotal;
     private Cliente cliente;
 
-    public ArrayList<Item> getItens() {
+    public OrdemServico(List<Item> itens, Cliente cliente) {
+        this.itens = itens;
+        this.cliente = cliente;
+    }
+
+    public OrdemServico() {
+    }
+
+    public List<Item> getItens() {
         return itens;
     }
 
-    public void setItens(ArrayList<Item> itens) {
+    public void setItens(List<Item> itens) {
         this.itens = itens;
     }
 
@@ -32,8 +40,21 @@ public class OrdemServico {
         this.cliente = cliente;
     }
 
-    public void executar(Fatura fatura) {
-       //TODO
-    }
+    public Fatura executar() {
 
+        Fatura fatura = new Fatura();
+        OrdemServico ordemServico = new OrdemServico();
+
+        double valorOrdem = 0;
+
+        for (int i = 0; i < itens.size(); i++) {
+            valorOrdem += itens.get(i).getQuantidade() * itens.get(i).getValorUnitario();
+        }
+
+        ordemServico.setValorTotal(valorOrdem);
+        fatura.setStatus("Em aberto.");
+        fatura.setOrdemServico(ordemServico);
+
+        return fatura;
+    }
 }

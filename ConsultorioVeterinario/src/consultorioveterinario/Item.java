@@ -2,18 +2,16 @@ package consultorioveterinario;
 
 public class Item {
 
-    private double valorTotal;
     private int quantidade;
     private double valorUnitario;
     private Servico servico;
     private Animal animal;
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public Item(int quantidade, double valorUnitario, Servico servico, Animal animal) {
+        this.quantidade = quantidade;
+        this.valorUnitario = valorUnitario;
+        this.servico = servico;
+        this.animal = animal;
     }
 
     public int getQuantidade() {
@@ -47,6 +45,5 @@ public class Item {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
-    
-    
+
 }
