@@ -40,11 +40,10 @@ public class OrdemServico {
         this.cliente = cliente;
     }
 
-    public Fatura executar() {
+    public Fatura executar(OrdemServico ordemServico) {
 
         Fatura fatura = new Fatura();
-        OrdemServico ordemServico = new OrdemServico();
-
+        
         double valorOrdem = 0;
 
         for (int i = 0; i < itens.size(); i++) {
@@ -52,9 +51,10 @@ public class OrdemServico {
         }
 
         ordemServico.setValorTotal(valorOrdem);
+        fatura.addOS(ordemServico);
         fatura.setStatus("Em aberto.");
-        fatura.setOrdemServico(ordemServico);
 
         return fatura;
     }
+
 }

@@ -1,30 +1,49 @@
 package consultorioveterinario;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fatura {
 
-    private OrdemServico ordemServico;
     private String status;
+    private List<OrdemServico> os;
+    private boolean avista;
 
-    public OrdemServico getOrdemServico() {
-        return ordemServico;
+    public boolean isAvista() {
+        return avista;
     }
 
-    public void setOrdemServico(OrdemServico ordemServico) {
-        this.ordemServico = ordemServico;
+    public void setAvista(boolean avista) {
+        this.avista = avista;
     }
-
+    
+    
     public String getStatus() {
-        return status;
+    return status;
     }
-
+    public Fatura() {
+        this.os = new ArrayList<>();
+    }
     public void setStatus(String status) {
         this.status = status;
     }
 
-    public Recibo pagar(double dinheiroRecebido) {
+    public List<OrdemServico> getOs() {
+        return os;
+    }
+
+    public void setOs(List<OrdemServico> os) {
+        this.os = os;
+    }
+    
+    public void addOS(OrdemServico ordem) {
+        os.add(ordem);
+    }
+
+    public Recibo pagar(double dinheiroRecebido, OrdemServico os) {
         Recibo recibo = new Recibo();
 
-        double valorFatura = ordemServico.getValorTotal();
+        double valorFatura = os.getValorTotal();
 
         double restantePagar = valorFatura - dinheiroRecebido;
 
@@ -39,5 +58,16 @@ public class Fatura {
         recibo.setValorFatura(restantePagar);
 
         return recibo;
+    }
+    
+    public Fatura gerarFatura(List<OrdemServico> os) {
+        Fatura fatura = new Fatura();
+        
+        return fatura;
+    }
+    
+    public void pagarFimDoMes(Fatura fatura) {
+        fatura.setAvista(false);
+        fatura.setStatus("A pagar");
     }
 }
