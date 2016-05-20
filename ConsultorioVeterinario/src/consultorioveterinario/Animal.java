@@ -1,15 +1,17 @@
 package consultorioveterinario;
 
+import java.util.List;
+
 public class Animal {
 
     private String nomeAnimal;
     private String raca;
-    Cliente cliente;
+    private List<Cliente> clientes;
 
-    public Animal(String nomeAnimal, String raca, Cliente cliente) {
+    public Animal(String nomeAnimal, String raca, List<Cliente> clientes) {
         this.nomeAnimal = nomeAnimal;
         this.raca = raca;
-        this.cliente = cliente;
+        this.clientes = clientes;
     }
 
     public String getNomeAnimal() {
@@ -28,12 +30,12 @@ public class Animal {
         this.raca = raca;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public List<Cliente> getClientes() {
+        return clientes;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
     }
 
 }
